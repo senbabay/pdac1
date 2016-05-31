@@ -102,8 +102,7 @@ shinyServer(function(input, output) {
     w = which(lx==input$slideHeatmap)
     paste0(len[w],"\nprobe sets")
   })
-},
-options = list(width="100%",height=1200)
+}
 )
 
 

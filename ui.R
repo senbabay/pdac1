@@ -29,17 +29,13 @@ shinyUI(
                          fluidPage(
                            fluidRow(
                              column(4, align="left",uiOutput("slideHeatmap")),
-                             column(5),
+                             column(5,align="center",imageOutput("legend")),
                              column(2, align="center",verbatimTextOutput("numGene"))
-                           ),
-                           fluidRow(
-                             column(12,align="center",imageOutput("legend"))
                            ),
                            fluidRow(
                              column(12,imageOutput("heatmap"))
                            ),
-                           tags$style(type='text/css', "#numGene { width:100%; margin-top: 25px;}"),
-                           tags$style(type='img', "#heatmap { width:100%; margin-top: 100px;}")
+                           tags$style(type='text/css', "#numGene { width:100%; margin-top: 25px;}")
                          )
                 )
     )

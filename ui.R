@@ -29,8 +29,8 @@ shinyUI(
                          fluidPage(
                            fluidRow(
                              column(4, align="left",uiOutput("slideHeatmap")),
-                             #column(6,align="center",imageOutput("legend")),
-                             column(2, align="center",verbatimTextOutput("numGene"))
+                             column(2, align="center",verbatimTextOutput("numGene")),
+                             column(6,align="center",imageOutput("legend"))
                            ),
                            fluidRow(
                              column(12,imageOutput("heatmap"))

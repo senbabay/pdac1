@@ -33,6 +33,9 @@ shinyUI(
                              column(2, align="center",verbatimTextOutput("numGene"))
                            ),
                            fluidRow(
+                             column(12,align="center",imageOutput("legend"))
+                           ),
+                           fluidRow(
                              column(12,imageOutput("heatmap"))
                            ),
                            tags$style(type='text/css', "#numGene { width:100%; margin-top: 25px;}")

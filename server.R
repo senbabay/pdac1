@@ -129,6 +129,15 @@ shinyServer(function(input, output) {
          alt = paste("Cutoff", vc))
   }, deleteFile = FALSE)
   
+  
+  output$legend <- renderImage({
+    filename <- normalizePath(file.path('./',"outside_classes_legend.png"))
+    list(src = filename,
+         width = 900,
+         alt = "Heatmap legend")
+  }, deleteFile = FALSE)
+  
+  
   output$numGene <- renderText({
     w = which(lx==input$slideHeatmap)
     paste0(len[w],"\nprobe sets")

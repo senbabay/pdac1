@@ -134,6 +134,7 @@ shinyServer(function(input, output) {
     filename <- normalizePath(file.path('./',"legend_small.png"))
     list(src = filename,
          width = 300,
+         height=100,
          alt = "Heatmap legend")
   }, deleteFile = FALSE)
   

@@ -39,7 +39,7 @@ shinyUI(
                              column(12,imageOutput("heatmap"))
                            ),
                            tags$style(type='text/css', "#numGene { width:100%; margin-top: 25px;}"),
-                           tags$style(type='img', "#heatmap { width:100%; margin-top: 100px;}"),
+                           tags$style(type='img', "#heatmap { width:100%; margin-top: 100px;}")
                          )
                 )
     )

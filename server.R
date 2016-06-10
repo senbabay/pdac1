@@ -133,7 +133,7 @@ shinyServer(function(input, output) {
   output$legend <- renderImage({
     filename <- normalizePath(file.path('./',"outside_classes_legend.png"))
     list(src = filename,
-         width = 900,
+         width = 450,
          alt = "Heatmap legend")
   }, deleteFile = FALSE)
   

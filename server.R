@@ -22,8 +22,10 @@ for(i in 1:length(lx)){
 }#end for i
 
 resp = as.factor(sapply(strsplit(colnames(zmat),"_"),"[",c(F,T)))
-respCol = rep("red",length(resp))
+respCol = rep("magenta",length(resp))
 respCol[which(resp=="LT")] = "turquoise4"
+
+mylab = unlist(strsplit(colnames(zmat),"_"))[c(T,F)]
 ###################################################################
 shinyServer(function(input, output) { 
   
@@ -65,6 +67,8 @@ shinyServer(function(input, output) {
     par(mar=c(4,4,3,1)+0.1)
     plot(x[,1],x[,2],pch=16,xlab="PC1",ylab="PC2",cex.lab=1.5,col=respCol,
          main="PC1 vs PC2",cex.axis=1.5,cex=1.5)
+    text(x[,1],x[,2],labels=mylab,cex=0.6,pos=1,offset=0.5)
+    legend("topleft",horiz=T,pch=16,legend=c("LT","ST"),col=c("turquoise4","magenta"),pt.cex=1.5,cex=0.8)
   })
   
   output$pc1pc3 <- renderPlot({
@@ -72,6 +76,8 @@ shinyServer(function(input, output) {
     par(mar=c(4,4,3,1)+0.1)
     plot(x[,1],x[,3],pch=16,xlab="PC1",ylab="PC3",cex.lab=1.5,col=respCol,
          main="PC1 vs PC3",cex.axis=1.5,cex=1.5)
+    text(x[,1],x[,3],labels=mylab,cex=0.6,pos=1,offset=0.5)
+    legend("topleft",horiz=T,pch=16,legend=c("LT","ST"),col=c("turquoise4","magenta"),pt.cex=1.5,cex=0.8)
   })
   
   getTable <- reactive({
